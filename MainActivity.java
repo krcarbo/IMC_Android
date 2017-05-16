@@ -121,7 +121,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    
+    btn_result.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+//            Récupération du poids
+            weight = Double.valueOf(edtx_weight.getText().toString());
+
+//            Récupération de la taille
+            float tHeight = Float.valueOf(edtx_inches.getText().toString());
+//            On convertit la taille en mètre
+            tHeight = tHeight / 100;
+//            La taille en mètre au carré
+            double heightCarre =  Math.pow(tHeight,2);
+
+//            Calcul de l'imc
+            result =  (weight / heightCarre);
+
+//            On arrondit le résultat à deux décimales
+            NumberFormat nf = new DecimalFormat("0.##");
+            String sResult = nf.format(result);
+
+
+//          Affichage de l'imc dans le textview
+            tw_result.setText("Votre IMC est de " + sResult);
+
+        }
+    });
 
     }
 }
