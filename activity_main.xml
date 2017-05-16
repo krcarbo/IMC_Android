@@ -97,6 +97,18 @@
         android:layout_marginTop="18dp"
         android:id="@+id/btn_raz" />
 
+    <Button
+        android:text="@string/str_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_raz"
+        android:layout_toRightOf="@+id/tw_weight"
+        android:layout_toEndOf="@+id/tw_weight"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:id="@+id/btn_result"
+        android:enabled="false" />
+
     
 
 
