@@ -94,7 +94,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//   Vérification que le poids est renseigné pour activer le bouton de calcul
 
+        edtx_weight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+//                On réinitialise le résultat si il y a un changement
+                result = 0;
+
+                if (count > 0)
+                    btn_result.setEnabled(true);
+                else
+                    btn_result.setEnabled(false);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+    
 
     }
 }
